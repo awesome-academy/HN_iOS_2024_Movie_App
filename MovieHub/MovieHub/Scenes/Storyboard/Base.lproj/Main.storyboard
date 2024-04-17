@@ -51,14 +51,29 @@
                     <view key="view" contentMode="scaleToFill" id="NiJ-aB-JVO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="x2k-ml-TjY">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="h6T-kB-QuR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x2k-ml-TjY" firstAttribute="top" secondItem="h6T-kB-QuR" secondAttribute="top" id="KRw-oT-sEp"/>
+                            <constraint firstItem="h6T-kB-QuR" firstAttribute="bottom" secondItem="x2k-ml-TjY" secondAttribute="bottom" id="N22-37-NHz"/>
+                            <constraint firstItem="x2k-ml-TjY" firstAttribute="leading" secondItem="h6T-kB-QuR" secondAttribute="leading" id="QJa-U2-PwE"/>
+                            <constraint firstItem="h6T-kB-QuR" firstAttribute="trailing" secondItem="x2k-ml-TjY" secondAttribute="trailing" id="VMq-AH-pq9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Nh-u1-jwk"/>
+                    <connections>
+                        <outlet property="tableView" destination="x2k-ml-TjY" id="Iee-XG-9jd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5rH-2F-gof" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-176" y="690"/>
+            <point key="canvasLocation" x="-176.33587786259542" y="689.43661971830988"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="XlP-g5-a0P">
