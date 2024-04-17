@@ -1,0 +1,10 @@
+//
+//  AppConfig.xcconfig
+//  MovieHub
+//
+//  Created by Duy Nguyễn on 18/04/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+API_KEY = 95d6a6ef93001af6e75d828b5716d601
