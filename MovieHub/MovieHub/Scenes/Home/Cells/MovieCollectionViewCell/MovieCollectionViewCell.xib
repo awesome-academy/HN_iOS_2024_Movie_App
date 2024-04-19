@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,13 +27,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCJ-f2-NHh">
-                                <rect key="frame" x="8" y="238" width="43.666666666666664" height="21"/>
+                                <rect key="frame" x="8" y="238" width="340" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVe-fB-RmK">
-                                <rect key="frame" x="8" y="267" width="31" height="14.333333333333314"/>
+                                <rect key="frame" x="8" y="267" width="340" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,9 +44,11 @@
                             <constraint firstItem="5JJ-Ou-vk7" firstAttribute="top" secondItem="f0H-iR-WpF" secondAttribute="top" id="01h-Wi-oZa"/>
                             <constraint firstItem="VVe-fB-RmK" firstAttribute="top" secondItem="MCJ-f2-NHh" secondAttribute="bottom" constant="8" id="0Ht-2m-HBj"/>
                             <constraint firstItem="VVe-fB-RmK" firstAttribute="leading" secondItem="f0H-iR-WpF" secondAttribute="leading" constant="8" id="OnA-P7-uVb"/>
+                            <constraint firstAttribute="trailing" secondItem="VVe-fB-RmK" secondAttribute="trailing" constant="6" id="kfu-yf-E04"/>
                             <constraint firstItem="MCJ-f2-NHh" firstAttribute="leading" secondItem="f0H-iR-WpF" secondAttribute="leading" constant="8" id="lVG-Lu-i7w"/>
                             <constraint firstAttribute="trailing" secondItem="5JJ-Ou-vk7" secondAttribute="trailing" id="vzN-8C-vLp"/>
                             <constraint firstItem="5JJ-Ou-vk7" firstAttribute="leading" secondItem="f0H-iR-WpF" secondAttribute="leading" id="wLh-ak-EBK"/>
+                            <constraint firstAttribute="trailing" secondItem="MCJ-f2-NHh" secondAttribute="trailing" constant="6" id="wR9-6U-uJd"/>
                             <constraint firstItem="MCJ-f2-NHh" firstAttribute="top" secondItem="5JJ-Ou-vk7" secondAttribute="bottom" constant="8" id="zeh-0d-wwx"/>
                         </constraints>
                     </view>

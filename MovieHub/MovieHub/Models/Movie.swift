@@ -18,6 +18,7 @@ struct Movie: Codable {
     var voteAverage: Double?
     var credits: Credits?
     var similar: MovieResponse?
+    var isFavorite: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case id
