@@ -38,6 +38,11 @@ struct Urls {
         return urlString
     }
     
+    func getListMovie(categories: String) -> String {
+        let urlString = baseUrl + "/movie/\(categories)" + "?api_key=\(key)"
+        return urlString
+    }
+    
     func getImage(urlString: String) -> String {
         let urlString = "https://image.tmdb.org/t/p/w500/\(urlString)?api_key=\(key)"
         return urlString

@@ -28,4 +28,26 @@ enum HomeSectionType: Int, CaseIterable {
             return "Now playing"
         }
     }
+    
+    var urlString: String {
+        switch self {
+        case .search:
+            return ""
+        case .popular:
+            return "popular"
+        case .topRated:
+            return "top_rated"
+        case .upComing:
+            return "upcoming"
+        case .nowPlaying:
+            return "now_playing"
+        }
+    }
+}
+
+enum MovieSectionType: Int {
+    case info
+    case cast
+    case similar
+    case total
 }

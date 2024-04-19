@@ -15,7 +15,6 @@ extension UIImageView {
             if let image = image {
                 DispatchQueue.main.async {
                     self.image = image
-                    
                 }
             } else {
                 if let error = error {

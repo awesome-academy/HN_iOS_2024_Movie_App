@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="405" id="KGk-i7-Jjw" customClass="SimilarTableViewCell" customModule="MovieHub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="549" height="405"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="549" height="405"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEO-LC-zBY">
+                        <rect key="frame" x="0.0" y="0.0" width="549" height="405"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwN-pY-Dcf">
+                                <rect key="frame" x="16" y="16" width="517" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ehK-zZ-VDC">
+                                <rect key="frame" x="0.0" y="56" width="549" height="220"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="Zb6-8Y-Sv6"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x4o-3j-luB">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OXr-ry-cpG">
+                                <rect key="frame" x="216.66666666666663" y="276" width="116" height="26"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OwN-pY-Dcf" firstAttribute="top" secondItem="CEO-LC-zBY" secondAttribute="top" constant="16" id="3gW-hc-DZx"/>
+                            <constraint firstItem="OXr-ry-cpG" firstAttribute="top" secondItem="ehK-zZ-VDC" secondAttribute="bottom" id="8we-Fr-RvF"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OXr-ry-cpG" secondAttribute="bottom" constant="60" id="96N-oh-UIo"/>
+                            <constraint firstItem="ehK-zZ-VDC" firstAttribute="top" secondItem="OwN-pY-Dcf" secondAttribute="bottom" constant="16" id="AIl-K8-xxo"/>
+                            <constraint firstAttribute="trailing" secondItem="ehK-zZ-VDC" secondAttribute="trailing" id="Peh-x9-AnT"/>
+                            <constraint firstItem="OXr-ry-cpG" firstAttribute="centerX" secondItem="CEO-LC-zBY" secondAttribute="centerX" id="aJa-aG-IQk"/>
+                            <constraint firstAttribute="trailing" secondItem="OwN-pY-Dcf" secondAttribute="trailing" constant="16" id="ev9-Tr-l8f"/>
+                            <constraint firstItem="OwN-pY-Dcf" firstAttribute="leading" secondItem="CEO-LC-zBY" secondAttribute="leading" constant="16" id="hCy-Ul-cm9"/>
+                            <constraint firstItem="ehK-zZ-VDC" firstAttribute="leading" secondItem="CEO-LC-zBY" secondAttribute="leading" id="yfe-87-LQM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="CEO-LC-zBY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="28k-XH-DB7"/>
+                    <constraint firstAttribute="bottom" secondItem="CEO-LC-zBY" secondAttribute="bottom" id="D5i-LX-r0c"/>
+                    <constraint firstItem="CEO-LC-zBY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="i5T-kf-Ucd"/>
+                    <constraint firstAttribute="trailing" secondItem="CEO-LC-zBY" secondAttribute="trailing" id="mzd-ZM-vIT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="collectionView" destination="ehK-zZ-VDC" id="s36-CM-AIa"/>
+                <outlet property="containerView" destination="CEO-LC-zBY" id="V1u-iA-2h2"/>
+                <outlet property="pageView" destination="OXr-ry-cpG" id="bPi-pu-4Uz"/>
+                <outlet property="recommendTitle" destination="OwN-pY-Dcf" id="WtR-Tb-pq4"/>
+            </connections>
+            <point key="canvasLocation" x="-30" y="-28"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

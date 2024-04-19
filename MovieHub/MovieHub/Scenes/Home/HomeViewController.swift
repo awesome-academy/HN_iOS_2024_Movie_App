@@ -170,6 +170,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 movies = []
             }
             cell.configCell(movies: movies)
+            cell.tappedMovie = { [weak self] movie in
+                guard let self else { return }
+                self.toMovieDetailScreen(movie: movie)
+            }
             return cell
         }
     }
@@ -185,11 +189,26 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let movieHeader = tableView.dequeueReusableHeaderFooterView(MovieHeader.self)
             guard let sectionType = HomeSectionType(rawValue: section) else { return nil }
             movieHeader?.configView(title: sectionType.title)
+            movieHeader?.showMoreTapped = { [weak self] in
+                guard let self = self else { return }
+                let vc = ListMovieViewController()
+                vc.category = sectionType.urlString
+                vc.titleString = sectionType.title
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             return movieHeader
         }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 44
+    }
+}
+
+extension HomeViewController {
+    func toMovieDetailScreen(movie: Movie) {
+        let vc = MovieDetailViewController()
+        vc.loadData(movie: movie)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
