@@ -36,4 +36,14 @@ extension UIViewController {
             self.present(alertController, animated: true)
         }
     }
+    
+    func showSuccess(title: String = "Success!!!", message: String = "Completed successfully") {
+         DispatchQueue.main.async {
+             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+             let OkAction = UIAlertAction(title: "OK", style: .default) { (_: UIAlertAction!) in
+             }
+             alertController.addAction(OkAction)
+             self.present(alertController, animated: true)
+         }
+     }
 }

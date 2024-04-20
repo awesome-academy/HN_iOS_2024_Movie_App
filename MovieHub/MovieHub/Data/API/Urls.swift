@@ -38,8 +38,8 @@ struct Urls {
         return urlString
     }
     
-    func getListMovie(categories: String) -> String {
-        let urlString = baseUrl + "/movie/\(categories)" + "?api_key=\(key)"
+    func getListMovie(categories: String, page: Int) -> String {
+        let urlString = baseUrl + "/movie/\(categories)" + "?api_key=\(key)&page=\(page)"
         return urlString
     }
     

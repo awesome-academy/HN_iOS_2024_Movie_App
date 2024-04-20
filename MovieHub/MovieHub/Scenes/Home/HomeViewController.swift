@@ -153,6 +153,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case .search:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SearchCell.self)
+            cell.tappedSearch = { [weak self] in
+                guard let self else { return }
+                self.toSearchMovieScreen()
+            }
             return cell
         default:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ListMovieTableViewCell.self)
@@ -209,6 +213,11 @@ extension HomeViewController {
     func toMovieDetailScreen(movie: Movie) {
         let vc = MovieDetailViewController()
         vc.loadData(movie: movie)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toSearchMovieScreen() {
+        let vc = SearchViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

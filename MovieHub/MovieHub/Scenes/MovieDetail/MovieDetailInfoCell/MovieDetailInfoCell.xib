@@ -34,14 +34,14 @@
                                     <constraint firstAttribute="width" constant="130" id="tLZ-kr-dQy"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88b-wS-Sy0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88b-wS-Sy0">
                                 <rect key="frame" x="162" y="176" width="491" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RK-QD-Ou2">
-                                <rect key="frame" x="162" y="246" width="42" height="25"/>
+                                <rect key="frame" x="162" y="246" width="41.333333333333343" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="C89-dz-xqg"/>
                                 </constraints>
@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-TJ-Kqo">
-                                <rect key="frame" x="610.33333333333337" y="252" width="26.666666666666629" height="24"/>
+                                <rect key="frame" x="610.33333333333337" y="251.99999999999997" width="26.666666666666629" height="23.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -59,14 +59,6 @@
                                     <action selector="tappedFavoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zGO-Xm-GI8"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFY-la-B17">
-                                <rect key="frame" x="162" y="287" width="120" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="L2e-cs-LdU"/>
-                                    <constraint firstAttribute="height" constant="40" id="oX4-tK-JyA"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEN-nw-LQg">
                                 <rect key="frame" x="16" y="372" width="637" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -94,13 +86,23 @@
                                     <action selector="tappedPlayButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e5c-wD-6FV"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpJ-9O-1lJ" customClass="StarRatingView" customModule="MovieHub" customModuleProvider="target">
+                                <rect key="frame" x="162" y="283" width="200" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="CwH-3T-2Kx"/>
+                                    <constraint firstAttribute="width" constant="200" id="jyc-0I-e2V"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CLr-aS-2jc" firstAttribute="leading" secondItem="K7c-u6-G1z" secondAttribute="leading" constant="16" id="1LB-sX-tOZ"/>
                             <constraint firstItem="6RK-QD-Ou2" firstAttribute="top" secondItem="ylx-UL-VbN" secondAttribute="bottom" constant="26" id="2s4-4U-jDI"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rpJ-9O-1lJ" secondAttribute="trailing" constant="16" id="3fZ-qy-aFP"/>
                             <constraint firstItem="ecn-C5-s74" firstAttribute="top" secondItem="lEN-nw-LQg" secondAttribute="bottom" constant="8" id="EsK-cU-8k7"/>
                             <constraint firstAttribute="trailing" secondItem="mjz-TJ-Kqo" secondAttribute="trailing" constant="32" id="GQN-ih-KKl"/>
+                            <constraint firstItem="rpJ-9O-1lJ" firstAttribute="top" secondItem="6RK-QD-Ou2" secondAttribute="bottom" constant="12" id="JQS-JO-99t"/>
                             <constraint firstItem="ylx-UL-VbN" firstAttribute="top" secondItem="K7c-u6-G1z" secondAttribute="top" id="Pwv-pK-84z"/>
                             <constraint firstItem="ecn-C5-s74" firstAttribute="leading" secondItem="K7c-u6-G1z" secondAttribute="leading" constant="16" id="QSf-hp-ZTf"/>
                             <constraint firstAttribute="trailing" secondItem="88b-wS-Sy0" secondAttribute="trailing" constant="16" id="T6A-Mp-818"/>
@@ -113,11 +115,10 @@
                             <constraint firstItem="wTm-C9-Isj" firstAttribute="centerX" secondItem="ylx-UL-VbN" secondAttribute="centerX" id="bmE-Iq-He5"/>
                             <constraint firstItem="6RK-QD-Ou2" firstAttribute="leading" secondItem="CLr-aS-2jc" secondAttribute="trailing" constant="16" id="clp-hY-Nsk"/>
                             <constraint firstItem="ylx-UL-VbN" firstAttribute="leading" secondItem="K7c-u6-G1z" secondAttribute="leading" id="dBy-1t-uj4"/>
-                            <constraint firstItem="xFY-la-B17" firstAttribute="top" secondItem="6RK-QD-Ou2" secondAttribute="bottom" constant="16" id="eVJ-UX-x9G"/>
                             <constraint firstItem="lEN-nw-LQg" firstAttribute="top" secondItem="CLr-aS-2jc" secondAttribute="bottom" constant="32" id="fGL-sM-f2o"/>
                             <constraint firstItem="88b-wS-Sy0" firstAttribute="leading" secondItem="CLr-aS-2jc" secondAttribute="trailing" constant="16" id="hOe-tD-1PB"/>
+                            <constraint firstItem="rpJ-9O-1lJ" firstAttribute="leading" secondItem="CLr-aS-2jc" secondAttribute="trailing" constant="16" id="lAv-Dg-JnS"/>
                             <constraint firstAttribute="bottom" secondItem="ecn-C5-s74" secondAttribute="bottom" constant="8" id="np2-ka-uBW"/>
-                            <constraint firstItem="xFY-la-B17" firstAttribute="leading" secondItem="CLr-aS-2jc" secondAttribute="trailing" constant="16" id="rcL-Ms-pFv"/>
                             <constraint firstItem="CLr-aS-2jc" firstAttribute="top" secondItem="ylx-UL-VbN" secondAttribute="bottom" constant="-60" id="wAs-bk-Y8E"/>
                             <constraint firstAttribute="trailing" secondItem="lEN-nw-LQg" secondAttribute="trailing" constant="16" id="yMZ-Qj-KeB"/>
                         </constraints>
@@ -141,18 +142,16 @@
                 <outlet property="overViewTitle" destination="lEN-nw-LQg" id="Vyz-Fy-wXZ"/>
                 <outlet property="playButton" destination="wTm-C9-Isj" id="bsl-xK-V1k"/>
                 <outlet property="posterImageView" destination="CLr-aS-2jc" id="TOY-po-7FV"/>
-                <outlet property="rateView" destination="xFY-la-B17" id="Zii-Rs-naa"/>
+                <outlet property="starView" destination="rpJ-9O-1lJ" id="6iG-DQ-yBH"/>
                 <outlet property="timeLabel" destination="6RK-QD-Ou2" id="xiu-Zh-QnB"/>
+                <outlet property="widthStarViewConstraint" destination="jyc-0I-e2V" id="cHf-nc-jsZ"/>
             </connections>
-            <point key="canvasLocation" x="289.3129770992366" y="9.1549295774647899"/>
+            <point key="canvasLocation" x="287.78625954198475" y="9.1549295774647899"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="play.circle" catalog="system" width="128" height="123"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
