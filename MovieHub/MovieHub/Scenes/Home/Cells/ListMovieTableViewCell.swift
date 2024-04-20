@@ -13,11 +13,12 @@ final class ListMovieTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet private weak var collectionView: UICollectionView!
     var tappedMovie: ((Movie) -> ())?
 
-    var movies = [Movie]() {
+    private var movies = [Movie]() {
         didSet {
             collectionView.reloadData()
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configView()

@@ -22,6 +22,7 @@ final class SearchCell: UITableViewCell, NibReusable {
     }
     
     private func configView() {
+        searchImageView.addGradientOverlay()
         searchView.layer.cornerRadius = 12.0
         searchView.layer.cornerCurve = .continuous
         searchPlaceholder.font = .systemFont(ofSize: 14)

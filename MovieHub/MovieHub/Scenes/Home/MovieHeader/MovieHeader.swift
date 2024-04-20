@@ -13,6 +13,7 @@ final class MovieHeader: UITableViewHeaderFooterView, NibReusable {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var headerTitle: UILabel!
     var showMoreTapped: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

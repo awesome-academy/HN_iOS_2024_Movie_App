@@ -13,14 +13,17 @@ final class ListMovieViewController: UIViewController, NibReusable {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    private var currentPage = 1
+    private var isFetching = false
     var category: String = ""
     var titleString: String = ""
-    var movies = [Movie]() {
+    private var movies = [Movie]() {
         didSet {
             collectionView.reloadData()
         }
     }
-    var movieRepository: MovieRepositoryType = MovieRepository()
+    private var movieRepository: MovieRepositoryType = MovieRepository()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
@@ -35,13 +38,18 @@ final class ListMovieViewController: UIViewController, NibReusable {
     }
     
     private func prepareDatasource() {
-        let categoryURL = Urls.shared.getListMovie(categories: category)
-
+        guard !isFetching else { return }
+        isFetching = true
+        let categoryURL = Urls.shared.getListMovie(categories: category, page: currentPage)
         movieRepository.getMovies(urlString: categoryURL) { [weak self] result in
             guard let self else { return }
+            self.isFetching = false
             switch result {
             case .success(let movieResponse):
-                self.movies = movieResponse.results ?? []
+                DispatchQueue.main.async {
+                    self.movies += movieResponse.results ?? []
+                    self.currentPage += 1
+                }
             case .failure(let error):
                 switch error {
                 case let AppError.normalError(message):
@@ -93,5 +101,16 @@ extension ListMovieViewController: UICollectionViewDelegateFlowLayout {
                             left: Constants.minLineSpacing,
                             bottom: .zero,
                             right: Constants.minLineSpacing)
+    }
+}
+
+extension ListMovieViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        if offsetY > contentHeight - height {
+            prepareDatasource()
+        }
     }
 }

@@ -11,14 +11,12 @@ import Reusable
 final class MovieDetailViewController: UIViewController, NibReusable {
 
     @IBOutlet private weak var tableView: UITableView!
-    var movie: Movie? {
+    private var movie: Movie? {
         didSet {
-            DispatchQueue.main.async { [unowned self] in
-                self.tableView.reloadData()
-            }
+            tableView.reloadData()
         }
     }
-    var movieRepository: MovieRepositoryType = MovieRepository()
+    private var movieRepository: MovieRepositoryType = MovieRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +44,9 @@ final class MovieDetailViewController: UIViewController, NibReusable {
             self.loading(false)
             switch result {
             case .success(let movieDetail):
-                self.movie = movieDetail
+                DispatchQueue.main.async {
+                    self.movie = movieDetail
+                }
             case .failure(let error):
                 switch error {
                 case let AppError.normalError(message):
@@ -63,6 +63,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func numberOfSections(in tableView: UITableView) -> Int {
         return MovieSectionType.total.rawValue
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -74,8 +75,40 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         switch section {
         case .info:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailInfoCell.self)
+            
             guard let movieDetail = movie else { return UITableViewCell() }
-            cell.configCell(movie: movieDetail)
+            guard let movieID = movieDetail.id else { return UITableViewCell() }
+            let isFavorite = movieRepository.isMovieInFavorites(movieID: movieID)
+            cell.configCell(movie: movieDetail, isFavorite: isFavorite)
+            cell.tappedFavorite = { [weak self] movie in
+                guard let self else { return }
+                if movieRepository.isMovieInFavorites(movieID: movieID) {
+                    movieRepository.deleteMovieFromFavorites(movieID: movieID) { result in
+                        switch result {
+                        case .success:
+                            DispatchQueue.main.async {
+                                self.showSuccess(message: "The movie has been removed from favorites successfully.")
+                                cell.updateFavoriteButtonImage(isFavorite: false)
+     
+                            }
+                        case .failure(let error):
+                            self.showError(message: error.localizedDescription)
+                        }
+                    }
+                } else {
+                    movieRepository.saveMovieToFavorites(movie: movie) { result in
+                        switch result {
+                        case .success:
+                            DispatchQueue.main.async {
+                                cell.updateFavoriteButtonImage(isFavorite: true)
+                                self.showSuccess(message: "The movie has been saved to favorites successfully.")
+                            }
+                        case .failure(let error):
+                            self.showError(message: error.localizedDescription)
+                        }
+                    }
+                }
+            }
             cell.selectionStyle = .none
             return cell
             
