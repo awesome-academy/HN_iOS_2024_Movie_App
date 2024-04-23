@@ -74,9 +74,8 @@ extension ListMovieViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = MovieDetailViewController()
-        vc.loadData(movie: movies[indexPath.row])
-        navigationController?.pushViewController(vc, animated: true)
+        guard let movieID =  movies[indexPath.row].id else { return }
+        toMovieDetailScreen(movieID: movieID)
     }
 }
 
@@ -112,5 +111,13 @@ extension ListMovieViewController: UIScrollViewDelegate {
         if offsetY > contentHeight - height {
             prepareDatasource()
         }
+    }
+}
+
+extension ListMovieViewController {
+    func toMovieDetailScreen(movieID: Int) {
+        let vc = MovieDetailViewController()
+        vc.loadData(movieID: movieID)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

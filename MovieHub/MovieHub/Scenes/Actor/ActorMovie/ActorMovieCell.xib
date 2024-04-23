@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="542" id="KGk-i7-Jjw" customClass="ActorMovieCell" customModule="MovieHub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="493" height="542"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="493" height="542"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt4-Ww-f48">
+                        <rect key="frame" x="16" y="7.9999999999999982" width="461" height="26.333333333333329"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cpq-Rr-cPh">
+                        <rect key="frame" x="0.0" y="50.333333333333343" width="493" height="290"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="290" id="7Kg-LK-t2r"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o91-Kh-QuJ">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nG7-yK-3Zn">
+                        <rect key="frame" x="188.66666666666666" y="340.33333333333331" width="115.99999999999997" height="26"/>
+                    </pageControl>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="cpq-Rr-cPh" firstAttribute="top" secondItem="qt4-Ww-f48" secondAttribute="bottom" constant="16" id="LXb-al-X3f"/>
+                    <constraint firstItem="cpq-Rr-cPh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SH7-31-mSn"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nG7-yK-3Zn" secondAttribute="bottom" constant="30" id="SL8-iD-ZJT"/>
+                    <constraint firstItem="nG7-yK-3Zn" firstAttribute="top" secondItem="cpq-Rr-cPh" secondAttribute="bottom" id="WDh-Lw-7Pv"/>
+                    <constraint firstItem="qt4-Ww-f48" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="WQR-oa-URz"/>
+                    <constraint firstAttribute="trailing" secondItem="qt4-Ww-f48" secondAttribute="trailing" constant="16" id="rGT-gm-jUB"/>
+                    <constraint firstAttribute="trailing" secondItem="cpq-Rr-cPh" secondAttribute="trailing" id="tQg-Oj-aop"/>
+                    <constraint firstItem="qt4-Ww-f48" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="uPj-Nf-Mvm"/>
+                    <constraint firstItem="nG7-yK-3Zn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="x8X-Bm-uTo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="collectionView" destination="cpq-Rr-cPh" id="7xu-ah-hkj"/>
+                <outlet property="pageView" destination="nG7-yK-3Zn" id="QUx-Pv-82c"/>
+                <outlet property="titleLabel" destination="qt4-Ww-f48" id="ikn-GH-JcF"/>
+            </connections>
+            <point key="canvasLocation" x="174.80916030534351" y="164.08450704225353"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
