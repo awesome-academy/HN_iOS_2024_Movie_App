@@ -32,9 +32,8 @@ final class MovieDetailViewController: UIViewController, NibReusable {
         tableView.register(cellType: SimilarTableViewCell.self)
     }
     
-    func loadData(movie: Movie) {
-        guard let id = movie.id else { return }
-         getMovieDetail(id: id)
+    func loadData(movieID: Int) {
+         getMovieDetail(id: movieID)
     }
     
     private func getMovieDetail(id: Int) {
@@ -129,7 +128,8 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
             cell.configCell(data: movieDetail.similar?.results ?? [])
             cell.tappedSimilar = { [weak self] movie in
                 guard let self else { return }
-                self.toMovieDetailScreen(movie: movie)
+                guard let movieID = movie.id else { return }
+                self.toMovieDetailScreen(movieID: movieID)
             }
             cell.selectionStyle = .none
             return cell
@@ -141,13 +141,15 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension MovieDetailViewController {
-    func toMovieDetailScreen(movie: Movie) {
+    func toMovieDetailScreen(movieID: Int) {
         let vc = MovieDetailViewController()
-        vc.loadData(movie: movie)
+        vc.loadData(movieID: movieID)
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func toActorDetailScreen(cast: Cast) {
-
+        let vc = ActorViewController()
+        vc.idActor = cast.id
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

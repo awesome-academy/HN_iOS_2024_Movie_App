@@ -1,8 +1,8 @@
 //
-//  Enum.swift
+//  HomeSectionType.swift
 //  MovieHub
 //
-//  Created by nguyen.van.duyb on 4/17/24.
+//  Created by Duy Nguyễn on 23/04/2024.
 //
 
 import Foundation
@@ -43,11 +43,4 @@ enum HomeSectionType: Int, CaseIterable {
             return "now_playing"
         }
     }
-}
-
-enum MovieSectionType: Int {
-    case info
-    case cast
-    case similar
-    case total
 }

@@ -175,8 +175,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell.configCell(movies: movies)
             cell.tappedMovie = { [weak self] movie in
-                guard let self else { return }
-                self.toMovieDetailScreen(movie: movie)
+                guard let self, let movieID = movie.id else { return }
+                self.toMovieDetailScreen(movieID: movieID)
             }
             return cell
         }
@@ -210,9 +210,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController {
-    func toMovieDetailScreen(movie: Movie) {
+    func toMovieDetailScreen(movieID: Int) {
         let vc = MovieDetailViewController()
-        vc.loadData(movie: movie)
+        vc.loadData(movieID: movieID)
         navigationController?.pushViewController(vc, animated: true)
     }
     

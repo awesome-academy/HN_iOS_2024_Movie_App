@@ -73,7 +73,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        toMovieDetailScreen(movie: dataSource[indexPath.row])
+        guard let movieID = dataSource[indexPath.row].id else { return }
+        toMovieDetailScreen(movieID: movieID)
     }
 }
 
@@ -99,10 +100,9 @@ extension SearchViewController: UIScrollViewDelegate {
 }
 
 extension SearchViewController {
-    func toMovieDetailScreen(movie: Movie) {
+    func toMovieDetailScreen(movieID: Int) {
         let vc = MovieDetailViewController()
-        vc.loadData(movie: movie)
+        vc.loadData(movieID: movieID)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
