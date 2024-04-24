@@ -28,6 +28,7 @@ final class CastTableViewCell: UITableViewCell, NibReusable {
     }
     
     private func configView() {
+        castTitle.text = "movie.cast".localized()
         pageView.isUserInteractionEnabled = false
         pageView.currentPageIndicatorTintColor = .white
         pageView.pageIndicatorTintColor = .gray

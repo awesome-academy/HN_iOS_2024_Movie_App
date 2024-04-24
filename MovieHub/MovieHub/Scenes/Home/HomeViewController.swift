@@ -7,6 +7,7 @@
 
 import UIKit
 import Reusable
+import Localize_Swift
 
 final class HomeViewController: UIViewController, NibReusable {
 
@@ -25,7 +26,7 @@ final class HomeViewController: UIViewController, NibReusable {
     }
     
     private func configView() {
-        title = "Home"
+        title = "home".localized()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none

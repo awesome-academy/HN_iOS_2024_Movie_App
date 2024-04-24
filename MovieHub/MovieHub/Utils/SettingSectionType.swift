@@ -33,13 +33,13 @@ enum SettingSectionType: Int {
     var title: String {
         switch self {
         case .theme:
-            return "Theme"
+            return "setting.theme".localized()
         case .language:
-            return "Language"
+            return "setting.language".localized()
         case .term:
-            return "Terms of service"
+            return "setting.terms".localized()
         case .policy:
-            return "Privacy Policy"
+            return "setting.policy".localized()
         default:
             return ""
         }

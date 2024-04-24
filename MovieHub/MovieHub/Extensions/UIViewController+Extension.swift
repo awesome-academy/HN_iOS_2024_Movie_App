@@ -28,7 +28,7 @@ extension UIViewController {
         }
     }
     
-    func showError(title: String = "Error", message: String = "Failed to load data") {
+    func showError(title: String = "error".localized(), message: String = "error.message".localized()) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let OkAction = UIAlertAction(title: "OK", style: .default) { (_: UIAlertAction!) in
@@ -38,7 +38,7 @@ extension UIViewController {
         }
     }
     
-    func showSuccess(title: String = "Success!!!", message: String = "Completed successfully") {
+    func showSuccess(title: String = "success".localized(), message: String = "success.message".localized()) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let OkAction = UIAlertAction(title: "OK", style: .default) { (_: UIAlertAction!) in

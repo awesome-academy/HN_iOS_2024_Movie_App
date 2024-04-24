@@ -40,6 +40,7 @@ final class MovieDetailInfoCell: UITableViewCell, NibReusable {
         posterImageView.layer.cornerCurve = .continuous
         posterImageView.layer.borderColor = UIColor.white.cgColor
         posterImageView.layer.borderWidth = 3
+        overViewTitle.text = "movie.overview".localized()
         favoriteButton.tintColor = .systemPink
         let configuration = UIImage.SymbolConfiguration(pointSize: 40)
         playButton.setPreferredSymbolConfiguration(configuration, forImageIn: .normal)
@@ -56,7 +57,8 @@ final class MovieDetailInfoCell: UITableViewCell, NibReusable {
     func configCell(movie: Movie, isFavorite: Bool) {
         descriptionLabel.text = movie.overview
         movieNameLabel.text = movie.title
-        timeLabel.text = "Run time: \(movie.runtime ?? 0)"
+        timeLabel.text = String(format: "runtime: %@ minutes".localized(),
+                                "\(movie.runtime ?? 0)")
         numberOfStackView = Int((movie.voteAverage ?? 10) / 2)
         self.movie = movie
         let backDropUrl = Urls.shared.getImage(urlString: movie.backDropPath ?? "")

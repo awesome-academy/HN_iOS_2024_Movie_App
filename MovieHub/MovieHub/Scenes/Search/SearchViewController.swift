@@ -31,6 +31,7 @@ final class SearchViewController: UIViewController, NibReusable {
 
     private func configView() {
         searchBar.delegate = self
+        searchBar.placeholder = "search.placeholder".localized()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none

@@ -35,6 +35,7 @@ final class FavoriteViewController: UIViewController, NibReusable {
     }
     
     private func configView() {
+        title = "favorite".localized()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: SearchMovieCell.self)

@@ -59,6 +59,7 @@
             <connections>
                 <outlet property="containerView" destination="i6A-c1-58W" id="aM0-7q-V0k"/>
                 <outlet property="headerTitle" destination="V0m-At-ugS" id="dse-o0-2Gb"/>
+                <outlet property="seeMoreButton" destination="6ec-Ch-BlC" id="9lh-Ym-fKX"/>
             </connections>
             <point key="canvasLocation" x="674.04580152671758" y="-427.46478873239437"/>
         </view>
