@@ -7,6 +7,7 @@
 
 import UIKit
 import Reusable
+import SafariServices
 
 final class MovieDetailViewController: UIViewController, NibReusable {
 
@@ -108,6 +109,11 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
                     }
                 }
             }
+            cell.tappedPlay = { [weak self] movie in
+                guard let self, let movieKey = movie.videos?.results?.first?.key else { return }
+                let trailerUrlString = Urls.shared.getTrailerUrl(key: movieKey)
+                self.presentSafariViewController(with: trailerUrlString)
+            }
             cell.selectionStyle = .none
             return cell
             
@@ -141,13 +147,13 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension MovieDetailViewController {
-    func toMovieDetailScreen(movieID: Int) {
+    private func toMovieDetailScreen(movieID: Int) {
         let vc = MovieDetailViewController()
         vc.loadData(movieID: movieID)
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func toActorDetailScreen(cast: Cast) {
+    private func toActorDetailScreen(cast: Cast) {
         let vc = ActorViewController()
         vc.idActor = cast.id
         navigationController?.pushViewController(vc, animated: true)

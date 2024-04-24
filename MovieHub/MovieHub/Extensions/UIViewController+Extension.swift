@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 extension UIViewController {
     func loading(_ isShow: Bool) {
@@ -38,12 +39,20 @@ extension UIViewController {
     }
     
     func showSuccess(title: String = "Success!!!", message: String = "Completed successfully") {
-         DispatchQueue.main.async {
-             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-             let OkAction = UIAlertAction(title: "OK", style: .default) { (_: UIAlertAction!) in
-             }
-             alertController.addAction(OkAction)
-             self.present(alertController, animated: true)
-         }
-     }
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let OkAction = UIAlertAction(title: "OK", style: .default) { (_: UIAlertAction!) in
+            }
+            alertController.addAction(OkAction)
+            self.present(alertController, animated: true)
+        }
+    }
+    
+    func presentSafariViewController(with urlString: String) {
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
+    }
 }

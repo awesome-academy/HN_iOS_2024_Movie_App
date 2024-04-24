@@ -59,4 +59,16 @@ struct Urls {
     func getSearchUrl(query: String, page: Int) -> String {
         return baseUrl + "/search/movie?api_key=\(key)&query=\(query)&page=\(page)"
     }
+    
+    func getTrailerUrl(key: String) -> String {
+        return "https://www.youtube.com/watch?v=\(key)"
+    }
+    
+    func getTermsUrl() -> String {
+        return "https://sites.google.com/view/moviehub-terms-of-service"
+    }
+    
+    func getPolicyUrl() -> String {
+        return "https://sites.google.com/view/moviehub-privacy-policy"
+    }
 }
