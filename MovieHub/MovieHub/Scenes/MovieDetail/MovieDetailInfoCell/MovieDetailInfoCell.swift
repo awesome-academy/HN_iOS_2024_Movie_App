@@ -21,7 +21,7 @@ final class MovieDetailInfoCell: UITableViewCell, NibReusable {
     @IBOutlet private weak var overViewTitle: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     var tappedFavorite: ((Movie) -> Void)?
-    var tappedPlay: (() -> Void)?
+    var tappedPlay: ((Movie) -> Void)?
     private var movie: Movie?
     private var numberOfStackView = 0 {
         didSet {
@@ -77,6 +77,7 @@ final class MovieDetailInfoCell: UITableViewCell, NibReusable {
     }
     
     @IBAction func tappedPlayButton(_ sender: Any) {
-        tappedPlay?()
+        guard let movie = movie else { return }
+        tappedPlay?(movie)
     }
 }
