@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  MovieHub
+
+  Created by Duy Nguyễn on 24/04/2024.
+  
+*/
+// MARK: - Home
+"home" = "Home";
+"home.popular" = "Popular";
+"home.topRated" = "Top Rated";
+"home.upcoming" = "Up coming";
+"home.nowplaying" = "Now playing";
+"home.seemore" = "See more > ";
+"home.welcome" = "Welcome";
+"home.bio" = "Millions of movies, TV shows and peopled to discover. Explore now.";
+"home.search" = "Search for a movie, person ...";
+
+// MARK: - Favorite
+"favorite" = "Favorite";
+
+// MARK: - Setting
+
+"setting.title" = "Setting";
+"setting.theme" = "Theme";
+"setting.theme.title" = "Select Theme";
+"setting.theme.dark" = "Dark";
+"setting.theme.light" = "Light";
+"setting.theme.system" = "System";
+"setting.language" = "Language";
+"setting.language.title" = "Select Language";
+"setting.language.vn" = "Vietnamese";
+"setting.language.en" = "English";
+"setting.terms" = "Terms of Service";
+"setting.policy" = "Privacy Policy";
+
+
+// MARK: - Search
+"search.placeholder" = "Enter movie name ...";
+
+// MARK: - Movie Detail
+"movie.overview" = "Overview";
+"movie.cast" = "Full Cast & Crew";
+"movie.recommend" = "Recommendation";
+"movie.add" = "The movie has been saved to favorites successfully.";
+"movie.remove" = "The movie has been removed from favorites successfully.";
+// MARK: - Actor
+"actor.list" = "List movies";
+"actor.knownas" = "Known as : ";
+"actor.birthday" = "Birthday: ";
+"actor.place" = "Place: ";
+
+// MARK: - Common
+
+"cancel" = "Cancel";
+"error" = "Error";
+"error.message" = "Failed to load data";
+"success" = "Success!!!";
+"success.message" = "Completed successfully";
+"noInternet" = "No internet connection.";
+"runtime: %@ minutes" = "Run time: %@ minutes";
+

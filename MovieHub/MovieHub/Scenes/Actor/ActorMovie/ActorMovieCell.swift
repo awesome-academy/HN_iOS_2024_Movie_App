@@ -27,6 +27,7 @@ final class ActorMovieCell: UITableViewCell, NibReusable {
     }
     
     private func configView() {
+        titleLabel.text = "actor.list".localized()
         pageView.isUserInteractionEnabled = false
         pageView.currentPageIndicatorTintColor = .white
         pageView.pageIndicatorTintColor = .gray

@@ -27,6 +27,7 @@ final class SimilarTableViewCell: UITableViewCell, NibReusable {
     }
     
     private func configView() {
+        recommendTitle.text = "movie.recommend".localized()
         pageView.isUserInteractionEnabled = false
         pageView.currentPageIndicatorTintColor = .white
         pageView.pageIndicatorTintColor = .gray

@@ -19,13 +19,13 @@ enum HomeSectionType: Int, CaseIterable {
         case .search:
             return ""
         case .popular:
-            return "Popular"
+            return "home.popular".localized()
         case .topRated:
-            return "Top Rated"
+            return "home.topRated".localized()
         case .upComing:
-            return "Up coming"
+            return "home.upcoming".localized()
         case .nowPlaying:
-            return "Now playing"
+            return "home.nowplaying".localized()
         }
     }
     

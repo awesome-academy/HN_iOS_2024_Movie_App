@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -94,10 +95,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bioLabel" destination="aSt-uI-6ab" id="pdR-4M-Y57"/>
                 <outlet property="searchButton" destination="Shf-Yz-yZJ" id="IRl-X2-lzA"/>
                 <outlet property="searchImageView" destination="glt-dK-Joj" id="aab-iW-zPy"/>
                 <outlet property="searchPlaceholder" destination="8Zs-Yr-p7R" id="GD2-pS-OZJ"/>
                 <outlet property="searchView" destination="Z4F-l4-gpy" id="kiK-1B-FrV"/>
+                <outlet property="titleLabel" destination="QVq-Sg-tvs" id="0xF-Ee-Hee"/>
             </connections>
             <point key="canvasLocation" x="92" y="36"/>
         </tableViewCell>

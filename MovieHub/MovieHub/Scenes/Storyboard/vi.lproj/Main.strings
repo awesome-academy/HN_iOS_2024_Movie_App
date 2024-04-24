@@ -1,0 +1,12 @@
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "FDE-zM-L7q"; */
+"FDE-zM-L7q.title" = "Home";
+
+/* Class = "UITabBarItem"; title = "Favorite"; ObjectID = "W1Z-4b-6TN"; */
+"W1Z-4b-6TN.title" = "Favorite";
+
+/* Class = "UITabBarItem"; title = "Account"; ObjectID = "ohV-ah-cSV"; */
+"ohV-ah-cSV.title" = "Account";
+
+/* Class = "UILabel"; text = "Setting"; ObjectID = "saF-G3-cSe"; */
+"saF-G3-cSe.text" = "Setting";

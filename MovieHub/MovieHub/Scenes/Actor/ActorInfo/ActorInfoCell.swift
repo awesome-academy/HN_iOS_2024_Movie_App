@@ -35,10 +35,10 @@ final class ActorInfoCell: UITableViewCell, NibReusable {
     
     func setContentForCell(actor: Actor) {
         actorBioLabel.text = actor.biography
-        actorDateLabel.text = actor.birthday
+        actorDateLabel.text = "actor.birthday".localized() + (actor.birthday ?? "")
         actorNameLabel.text = actor.name
-        actorKnownAsLabel.text = actor.knownFor
-        actorPlaceLabel.text = actor.place
+        actorKnownAsLabel.text = "actor.knownas".localized() +  (actor.knownFor ?? "")
+        actorPlaceLabel.text = "actor.place".localized() +  (actor.place ?? "")
         let actorImageString = Urls.shared.getImage(urlString: actor.profilePath ?? "")
         actorImageView.loadImage(fromURL: actorImageString)
         backdropImageView.loadImage(fromURL: actorImageString)

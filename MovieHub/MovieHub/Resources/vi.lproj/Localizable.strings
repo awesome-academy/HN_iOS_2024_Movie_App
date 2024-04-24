@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  MovieHub
+
+  Created by Duy Nguyễn on 24/04/2024.
+  
+*/
+// MARK: - Home
+"home" = "Màn hình chính";
+"home.popular" = "Phổ biến";
+"home.topRated" = "Top Bình Chọn";
+"home.upcoming" = "Sắp chiếu";
+"home.nowplaying" = "Đang chiếu";
+"home.seemore" = "Xem thêm > ";
+"home.welcome" = "Xin chào !!!";
+"home.bio" = "Hàng triệu bộ phim và seri truyền hình đang chờ bạn. Cùng kham phá ...";
+"home.search" = "Tìm kiếm phim, diễn viên ....";
+
+// MARK: - Favorite
+"favorite" = "Yêu thích";
+
+// MARK: - Setting
+
+"setting.title" = "Cài đặt";
+"setting.theme" = "Theme";
+"setting.theme.title" = "Lựa chọn theme";
+"setting.theme.dark" = "Tối";
+"setting.theme.light" = "Sáng";
+"setting.theme.system" = "Hệ thống";
+"setting.language" = "Ngôn ngữ";
+"setting.language.title" = "Lựa chọn ngôn ngữ";
+"setting.language.vn" = "Tiếng Việt";
+"setting.language.en" = "English";
+"setting.terms" = "Điều khoản dịch vụ";
+"setting.policy" = "Chính sách bảo mật";
+
+
+// MARK: - Search
+"search.placeholder" = "Nhập vào tên phim ...";
+
+// MARK: - Movie Detail
+"movie.overview" = "Tổng quan";
+"movie.cast" = "Diễn viên & ekip";
+"movie.recommend" = "Các phim cùng thể loại";
+"movie.add" = "Phim đã được thêm vào danh sách yêu thích thành công.";
+"movie.remove" = "Phim đã được xóa khỏi danh sách yêu thích thành công.";
+
+// MARK: - Actor
+"actor.list" = "Danh sách phim";
+"actor.knownas" = "Được biết đến như là : ";
+"actor.birthday" = "Ngày sinh: ";
+"actor.place" = "Nơi ở: ";
+// MARK: - Common
+
+"cancel" = "Huỷ";
+"error" = "Lỗi";
+"error.message" = "Không thể tải dữ liệu";
+"success" = "Thành công!!!";
+"success.message" = "Hoàn thành thành công";
+"noInternet" = "Không có kết nối mạng";
+"runtime: %@ minutes" = "Thời gian: %@ phút";

@@ -24,6 +24,10 @@
 		04861CC22BD7ED6400437652 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04861CC12BD7ED6400437652 /* ThemeType.swift */; };
 		04861CC42BD7EE1300437652 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04861CC32BD7EE1300437652 /* UserDefaultKeys.swift */; };
 		04861CC62BD8999800437652 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04861CC52BD8999800437652 /* Color.xcassets */; };
+		04861CC82BD8B98000437652 /* LanguageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04861CC72BD8B98000437652 /* LanguageType.swift */; };
+		04861CCD2BD8BAC600437652 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04861CCF2BD8BAC600437652 /* Localizable.strings */; };
+		04861CD32BD8BAFA00437652 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 04861CD22BD8BAFA00437652 /* Localize_Swift */; };
+		04861CFA2BD8F78900437652 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04861CF92BD8F78900437652 /* UIApplication+Extension.swift */; };
 		0498C1BC2BD646770023FA39 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498C1BB2BD646770023FA39 /* StarRatingView.swift */; };
 		04CF96572BD1241400832489 /* ListMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF96552BD1241400832489 /* ListMovieViewController.swift */; };
 		04CF96582BD1241400832489 /* ListMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CF96562BD1241400832489 /* ListMovieViewController.xib */; };
@@ -97,6 +101,12 @@
 		04861CC12BD7ED6400437652 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
 		04861CC32BD7EE1300437652 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		04861CC52BD8999800437652 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		04861CC72BD8B98000437652 /* LanguageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageType.swift; sourceTree = "<group>"; };
+		04861CCB2BD8BAB900437652 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		04861CCC2BD8BAB900437652 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		04861CCE2BD8BAC600437652 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04861CD02BD8BAC900437652 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04861CF92BD8F78900437652 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		04910F6F2BD0B87300DECB84 /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
 		0498C1BB2BD646770023FA39 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		04CF96552BD1241400832489 /* ListMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMovieViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B1C91F2BCF820B00880CD4 /* Reusable in Frameworks */,
+				04861CD32BD8BAFA00437652 /* Localize_Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +431,7 @@
 			children = (
 				C9B1C8D92BCE67FE00880CD4 /* UIViewController+Extension.swift */,
 				C9B1C9102BCF66DC00880CD4 /* UIImageView+Extension.swift */,
+				04861CF92BD8F78900437652 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -443,6 +455,7 @@
 				04861CBF2BD7BFB400437652 /* SettingSectionType.swift */,
 				04861CC12BD7ED6400437652 /* ThemeType.swift */,
 				04861CC32BD7EE1300437652 /* UserDefaultKeys.swift */,
+				04861CC72BD8B98000437652 /* LanguageType.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -452,6 +465,7 @@
 			children = (
 				C951A7862BCE6152002AB2F8 /* Assets.xcassets */,
 				04861CC52BD8999800437652 /* Color.xcassets */,
+				04861CCF2BD8BAC600437652 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -542,6 +556,7 @@
 			name = MovieHub;
 			packageProductDependencies = (
 				C9B1C91E2BCF820B00880CD4 /* Reusable */,
+				04861CD22BD8BAFA00437652 /* Localize_Swift */,
 			);
 			productName = MovieHub;
 			productReference = C951A7772BCE6151002AB2F8 /* MovieHub.app */;
@@ -569,10 +584,12 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = C951A76E2BCE6151002AB2F8;
 			packageReferences = (
 				C9B1C91D2BCF820B00880CD4 /* XCRemoteSwiftPackageReference "Reusable" */,
+				04861CD12BD8BAFA00437652 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
 			);
 			productRefGroup = C951A7782BCE6151002AB2F8 /* Products */;
 			projectDirPath = "";
@@ -590,6 +607,7 @@
 			files = (
 				04CF965F2BD13CC100832489 /* MovieDetailViewController.xib in Resources */,
 				04EBFA872BD7178300EAB65D /* ActorInfoCell.xib in Resources */,
+				04861CCD2BD8BAC600437652 /* Localizable.strings in Resources */,
 				04CF966E2BD13D3A00832489 /* SimilarTableViewCell.xib in Resources */,
 				C9B1C9092BCF624700880CD4 /* ListMovieTableViewCell.xib in Resources */,
 				04EBFA8B2BD7179000EAB65D /* ActorMovieCell.xib in Resources */,
@@ -639,6 +657,7 @@
 				04CF96722BD13D5600832489 /* TrailerCell.swift in Sources */,
 				04CF967B2BD20FF800832489 /* MovieRepository.swift in Sources */,
 				C9B1C8D52BCE672800880CD4 /* Urls.swift in Sources */,
+				04861CC82BD8B98000437652 /* LanguageType.swift in Sources */,
 				04EBFA862BD7178300EAB65D /* ActorInfoCell.swift in Sources */,
 				C9B1C90F2BCF627E00880CD4 /* MovieCollectionViewCell.swift in Sources */,
 				C9B1C8D32BCE671E00880CD4 /* APIService.swift in Sources */,
@@ -660,6 +679,7 @@
 				042271052BD7AA5600961EFB /* ActorSectionType.swift in Sources */,
 				04EBFA7C2BD7175300EAB65D /* TrailerViewController.swift in Sources */,
 				04CF96572BD1241400832489 /* ListMovieViewController.swift in Sources */,
+				04861CFA2BD8F78900437652 /* UIApplication+Extension.swift in Sources */,
 				04861CB72BD7B99000437652 /* Video.swift in Sources */,
 				04CF96692BD13D2100832489 /* CastTableViewCell.swift in Sources */,
 				C9B1C8F92BCF5DCF00880CD4 /* Credits.swift in Sources */,
@@ -673,10 +693,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		04861CCF2BD8BAC600437652 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04861CCE2BD8BAC600437652 /* en */,
+				04861CD02BD8BAC900437652 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C951A7802BCE6151002AB2F8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C951A7812BCE6151002AB2F8 /* Base */,
+				04861CCB2BD8BAB900437652 /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -685,6 +715,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C951A7892BCE6152002AB2F8 /* Base */,
+				04861CCC2BD8BAB900437652 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -698,6 +729,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -762,6 +794,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -895,6 +928,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		04861CD12BD8BAFA00437652 /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Localize-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		C9B1C91D2BCF820B00880CD4 /* XCRemoteSwiftPackageReference "Reusable" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AliSoftware/Reusable";
@@ -906,6 +947,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		04861CD22BD8BAFA00437652 /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04861CD12BD8BAFA00437652 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
+		};
 		C9B1C91E2BCF820B00880CD4 /* Reusable */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9B1C91D2BCF820B00880CD4 /* XCRemoteSwiftPackageReference "Reusable" */;

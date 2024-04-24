@@ -15,10 +15,7 @@ final class ActorViewController: UIViewController, NibReusable {
     private var movieRepository: MovieRepositoryType = MovieRepository()
     var idActor: Int?
     private var actor = Actor()
-    enum LayoutOptions {
-        static let actorCellHeight: CGFloat = 500.0
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
@@ -86,10 +83,6 @@ extension ActorViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return UITableViewCell()
         }
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return LayoutOptions.actorCellHeight
     }
 }
 

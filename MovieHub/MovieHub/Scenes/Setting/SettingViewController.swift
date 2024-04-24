@@ -8,10 +8,10 @@
 import UIKit
 import Reusable
 import SafariServices
+import Localize_Swift
 
 final class SettingViewController: UIViewController, NibReusable {
     
-    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     private var sections: [SettingSectionType] = [.theme, .language, .term, .policy]
     
@@ -21,6 +21,7 @@ final class SettingViewController: UIViewController, NibReusable {
     }
     
     private func configView() {
+        title = "setting.title".localized()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -57,7 +58,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         case .language:
-            print("Language cell selected")
+            showLanguageSelectionAlert { language in
+                Localize.setCurrentLanguage(language.localized)
+                UIApplication.reloadRootViewController()
+            }
         case .term:
             presentSafariViewController(with: Urls.shared.getTermsUrl())
         case .policy:
@@ -72,22 +76,22 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
 extension SettingViewController {
     private func showThemeSelectionAlert(completion: @escaping (ThemeType) -> Void) {
         let alert = UIAlertController(title: nil,
-                                      message: "Select Theme",
+                                      message: "setting.theme.title".localized(),
                                       preferredStyle: .actionSheet)
 
-        let darkAction = UIAlertAction(title: "Dark", style: .default) { _ in
+        let darkAction = UIAlertAction(title: "setting.theme.dark".localized(), style: .default) { _ in
             completion(.dark)
         }
 
-        let lightAction = UIAlertAction(title: "Light", style: .default) { _ in
+        let lightAction = UIAlertAction(title: "setting.theme.light".localized(), style: .default) { _ in
             completion(.light)
         }
 
-        let systemAction = UIAlertAction(title: "System", style: .default) { _ in
+        let systemAction = UIAlertAction(title: "setting.theme.system".localized(), style: .default) { _ in
             completion(.unspecified)
         }
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil)
 
         alert.addAction(darkAction)
         alert.addAction(lightAction)
@@ -95,4 +99,26 @@ extension SettingViewController {
         alert.addAction(cancelAction)
         navigationController?.present(alert, animated: true, completion: nil)
     }
+    
+    private func showLanguageSelectionAlert(completion: @escaping (LanguageType) -> Void) {
+        let alert = UIAlertController(title: nil,
+                                      message: "setting.language.title".localized(),
+                                      preferredStyle: .actionSheet)
+        
+        let vnAction = UIAlertAction(title: "setting.language.vn".localized(), style: .default) { _ in
+            completion(.vi)
+        }
+        
+        let enAction = UIAlertAction(title: "setting.language.en".localized(), style: .default) { _ in
+            completion(.en)
+        }
+        
+        let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil)
+
+        alert.addAction(vnAction)
+        alert.addAction(enAction)
+        alert.addAction(cancelAction)
+        navigationController?.present(alert, animated: true, completion: nil)
+    }
 }
+
