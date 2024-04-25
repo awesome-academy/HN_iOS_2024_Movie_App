@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NetWorkMonitor.shared.startMonitoring()
+        LocalPushNotification.shared.checkForPermissionNotification()
         return true
     }
     

@@ -60,3 +60,6 @@
 "noInternet" = "No internet connection.";
 "runtime: %@ minutes" = "Run time: %@ minutes";
 
+// MARK: Noti
+"noti.title" = "New movie available!";
+"noti.body" = "Tap to watch the new movie in the app.";

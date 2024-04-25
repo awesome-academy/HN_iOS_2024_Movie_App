@@ -59,8 +59,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             }
         case .language:
             showLanguageSelectionAlert { language in
-                Localize.setCurrentLanguage(language.localized)
-                UIApplication.reloadRootViewController()
+                if Localize.currentLanguage() != language.localized {
+                    Localize.setCurrentLanguage(language.localized)
+                    UIApplication.reloadRootViewController()
+                }
             }
         case .term:
             presentSafariViewController(with: Urls.shared.getTermsUrl())

@@ -29,12 +29,15 @@
             </objects>
             <point key="canvasLocation" x="645" y="-816"/>
         </scene>
-        <!--home-->
+        <!--Navigation Controller-->
         <scene sceneID="Ukz-x9-7gk">
             <objects>
                 <navigationController id="fpe-sn-h2Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" id="FDE-zM-L7q">
+                    <tabBarItem key="tabBarItem" title="" id="FDE-zM-L7q">
                         <imageReference key="image" image="house" catalog="system" variableValue="1"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="home"/>
+                        </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nqq-W0-IxA">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -79,11 +82,15 @@
             </objects>
             <point key="canvasLocation" x="-176.33587786259542" y="689.43661971830988"/>
         </scene>
-        <!--Favorite-->
+        <!--Navigation Controller-->
         <scene sceneID="XlP-g5-a0P">
             <objects>
                 <navigationController id="Vt6-RL-LpR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" image="heart" catalog="system" id="W1Z-4b-6TN"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="W1Z-4b-6TN">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="favorite"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JU1-AA-MF3">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -96,11 +103,15 @@
             </objects>
             <point key="canvasLocation" x="644" y="-13"/>
         </scene>
-        <!--Setting-->
+        <!--Navigation Controller-->
         <scene sceneID="TD2-Xx-xqK">
             <objects>
                 <navigationController id="r7A-9h-BvE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" image="person" catalog="system" id="ohV-ah-cSV"/>
+                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="ohV-ah-cSV">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="setting.title"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ze7-cq-fuf">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
