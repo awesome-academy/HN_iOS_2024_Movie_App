@@ -59,3 +59,7 @@
 "success.message" = "Hoàn thành thành công";
 "noInternet" = "Không có kết nối mạng";
 "runtime: %@ minutes" = "Thời gian: %@ phút";
+
+// MARK: Noti
+"noti.title" = "Có phim mới !!";
+"noti.body" = "Nhấn để xem phim mới vào app.";

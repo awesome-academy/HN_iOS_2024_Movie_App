@@ -87,7 +87,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
                         switch result {
                         case .success:
                             DispatchQueue.main.async {
-                                self.showSuccess(message: "movie.add".localized())
+                                self.showSuccess(message: "movie.remove".localized())
                                 cell.updateFavoriteButtonImage(isFavorite: false)
      
                             }
@@ -101,7 +101,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
                         case .success:
                             DispatchQueue.main.async {
                                 cell.updateFavoriteButtonImage(isFavorite: true)
-                                self.showSuccess(message: "movie.remove".localized())
+                                self.showSuccess(message: "movie.add".localized())
                             }
                         case .failure(let error):
                             self.showError(message: error.localizedDescription)

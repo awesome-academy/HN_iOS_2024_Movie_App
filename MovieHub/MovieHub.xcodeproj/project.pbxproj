@@ -44,6 +44,8 @@
 		04CF96772BD1408000832489 /* CastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF96752BD1408000832489 /* CastCell.swift */; };
 		04CF96782BD1408000832489 /* CastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CF96762BD1408000832489 /* CastCell.xib */; };
 		04CF967B2BD20FF800832489 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF967A2BD20FF800832489 /* MovieRepository.swift */; };
+		04E857102BD9FFB2005FF347 /* LocalPushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8570F2BD9FFB2005FF347 /* LocalPushNotification.swift */; };
+		04E857142BDA2F8C005FF347 /* UITabbarItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E857132BDA2F8B005FF347 /* UITabbarItem+Extension.swift */; };
 		04EBFA7C2BD7175300EAB65D /* TrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBFA7A2BD7175300EAB65D /* TrailerViewController.swift */; };
 		04EBFA7D2BD7175300EAB65D /* TrailerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EBFA7B2BD7175300EAB65D /* TrailerViewController.xib */; };
 		04EBFA802BD7175E00EAB65D /* ActorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBFA7E2BD7175E00EAB65D /* ActorViewController.swift */; };
@@ -124,6 +126,8 @@
 		04CF96752BD1408000832489 /* CastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCell.swift; sourceTree = "<group>"; };
 		04CF96762BD1408000832489 /* CastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCell.xib; sourceTree = "<group>"; };
 		04CF967A2BD20FF800832489 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		04E8570F2BD9FFB2005FF347 /* LocalPushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotification.swift; sourceTree = "<group>"; };
+		04E857132BDA2F8B005FF347 /* UITabbarItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabbarItem+Extension.swift"; sourceTree = "<group>"; };
 		04EBFA7A2BD7175300EAB65D /* TrailerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerViewController.swift; sourceTree = "<group>"; };
 		04EBFA7B2BD7175300EAB65D /* TrailerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerViewController.xib; sourceTree = "<group>"; };
 		04EBFA7E2BD7175E00EAB65D /* ActorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewController.swift; sourceTree = "<group>"; };
@@ -432,6 +436,7 @@
 				C9B1C8D92BCE67FE00880CD4 /* UIViewController+Extension.swift */,
 				C9B1C9102BCF66DC00880CD4 /* UIImageView+Extension.swift */,
 				04861CF92BD8F78900437652 /* UIApplication+Extension.swift */,
+				04E857132BDA2F8B005FF347 /* UITabbarItem+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B1C8E02BCE8B6200880CD4 /* CoreDataManager.swift */,
+				04E8570F2BD9FFB2005FF347 /* LocalPushNotification.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 			files = (
 				04861CC42BD7EE1300437652 /* UserDefaultKeys.swift in Sources */,
 				C9B1C8F52BCF5DB100880CD4 /* MovieResponse.swift in Sources */,
+				04E857102BD9FFB2005FF347 /* LocalPushNotification.swift in Sources */,
 				04EBFA8A2BD7179000EAB65D /* ActorMovieCell.swift in Sources */,
 				C951A7852BCE6151002AB2F8 /* MovieHub.xcdatamodeld in Sources */,
 				0498C1BC2BD646770023FA39 /* StarRatingView.swift in Sources */,
@@ -668,6 +675,7 @@
 				C951A77D2BCE6151002AB2F8 /* SceneDelegate.swift in Sources */,
 				C9B1C9192BCF6BF900880CD4 /* NetworkMonitor.swift in Sources */,
 				04861CBB2BD7B9E200437652 /* SettingCell.swift in Sources */,
+				04E857142BDA2F8C005FF347 /* UITabbarItem+Extension.swift in Sources */,
 				C9B1C8E12BCE8B6200880CD4 /* CoreDataManager.swift in Sources */,
 				04EBFA8D2BD7194700EAB65D /* Actor.swift in Sources */,
 				C951A7992BCE64DE002AB2F8 /* HomeViewController.swift in Sources */,
