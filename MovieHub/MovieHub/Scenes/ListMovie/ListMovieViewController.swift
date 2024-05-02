@@ -54,6 +54,8 @@ final class ListMovieViewController: UIViewController, NibReusable {
                 switch error {
                 case let AppError.normalError(message):
                     self.showError(message: message)
+                case AppError.noInternet:
+                    self.showError(title: AppError.noInternet.description)
                 default:
                     self.showError(message: error.localizedDescription)
                 }
