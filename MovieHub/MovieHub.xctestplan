@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "2259BE56-8395-4EBA-A620-9D57F0017816",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MovieHub.xcodeproj",
+      "identifier" : "C951A7762BCE6151002AB2F8",
+      "name" : "MovieHub"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MovieHub.xcodeproj",
+        "identifier" : "04C27AC72BE4B50F0022A6D7",
+        "name" : "MovieHubTests"
+      }
+    }
+  ],
+  "version" : 1
+}

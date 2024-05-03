@@ -17,7 +17,7 @@ final class MovieDetailViewController: UIViewController, NibReusable {
             tableView.reloadData()
         }
     }
-    private var movieRepository: MovieRepositoryType = MovieRepository()
+    private var movieRepository: MovieRepositoryType = MovieRepository(apiService: APIService.shared)
     
     override func viewDidLoad() {
         super.viewDidLoad()

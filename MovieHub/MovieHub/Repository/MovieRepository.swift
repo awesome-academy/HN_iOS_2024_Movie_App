@@ -21,23 +21,29 @@ protocol MovieRepositoryType {
 }
 
 struct MovieRepository: MovieRepositoryType {
+    var apiService: APIServiceProtocol
+    
+    init(apiService: APIServiceProtocol) {
+        self.apiService = apiService
+    }
+    
     func getMovies(urlString: String, completion: @escaping((Result<MovieResponse, Error>) -> ())) {
-        APIService.shared.get(urlString: urlString, completion: completion)
+        apiService.get(urlString: urlString, completion: completion)
     }
     
     func getMovieDetail(id: Int, completion: @escaping ((Result<Movie, Error>) -> Void)) {
         let urlString = Urls.shared.getMovieDetailUrl(id: id)
-        APIService.shared.get(urlString: urlString, completion: completion)
+        apiService.get(urlString: urlString, completion: completion)
     }
     
     func getSearchMovie(query: String, page: Int, completion: @escaping ((Result<MovieResponse, Error>) -> ())) {
         let urlString = Urls.shared.getSearchUrl(query: query, page: page)
-        APIService.shared.get(urlString: urlString, completion: completion)
+        apiService.get(urlString: urlString, completion: completion)
     }
     
     func getActorDetail(id: Int, completion: @escaping (Result<Actor, Error>) -> Void) {
         let urlString = Urls.shared.getActorDetailUrl(id: id)
-        APIService.shared.get(urlString: urlString, completion: completion)
+        apiService.get(urlString: urlString, completion: completion)
     }
     
     func saveMovieToFavorites(movie: Movie, completion: @escaping(Result<Void, Error>) -> Void) {

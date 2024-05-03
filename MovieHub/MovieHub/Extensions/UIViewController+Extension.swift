@@ -28,6 +28,17 @@ extension UIViewController {
         }
     }
     
+    func showError(error: Error) {
+        switch error {
+        case let AppError.normalError(message):
+            self.showError(message: message)
+        case AppError.noInternet:
+            self.showError(title: AppError.noInternet.description)
+        default:
+            self.showError(message: error.localizedDescription)
+        }
+    }
+    
     func showError(title: String = "error".localized(), message: String = "error.message".localized()) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

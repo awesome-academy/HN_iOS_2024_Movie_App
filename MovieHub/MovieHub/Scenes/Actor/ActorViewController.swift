@@ -12,7 +12,7 @@ final class ActorViewController: UIViewController, NibReusable {
 
     @IBOutlet private weak var tableView: UITableView!
     
-    private var movieRepository: MovieRepositoryType = MovieRepository()
+    private var movieRepository: MovieRepositoryType = MovieRepository(apiService: APIService.shared)
     var idActor: Int?
     private var actor = Actor()
 
