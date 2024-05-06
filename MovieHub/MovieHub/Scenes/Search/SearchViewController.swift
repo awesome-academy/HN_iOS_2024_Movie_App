@@ -12,7 +12,7 @@ final class SearchViewController: UIViewController, NibReusable {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
-    private var movieRepository: MovieRepositoryType = MovieRepository()
+    private var movieRepository: MovieRepositoryType = MovieRepository(apiService: APIService.shared)
     private var currentPage = 1
     private  var isFetching = false
 

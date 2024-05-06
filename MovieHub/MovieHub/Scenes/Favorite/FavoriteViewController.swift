@@ -12,7 +12,7 @@ final class FavoriteViewController: UIViewController, NibReusable {
 
     @IBOutlet private weak var tableView: UITableView!
     
-    private var movieRepository: MovieRepositoryType = MovieRepository()
+    private var movieRepository: MovieRepositoryType = MovieRepository(apiService: APIService.shared)
     private var dataSource = [FavoriteMovie]()
     
     override func viewDidLoad() {

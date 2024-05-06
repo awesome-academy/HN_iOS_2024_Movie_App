@@ -11,14 +11,14 @@ import Localize_Swift
 
 final class HomeViewController: UIViewController, NibReusable {
 
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var popularMovies: [Movie] = []
     var topRatedMovies: [Movie] = []
     var upComingMovies: [Movie] = []
     var nowPlayingMovies: [Movie] = []
     let dispatchGroup = DispatchGroup()
-    var movieRepository: MovieRepositoryType = MovieRepository()
+    var movieRepository: MovieRepositoryType = MovieRepository(apiService: APIService.shared)
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
@@ -35,7 +35,7 @@ final class HomeViewController: UIViewController, NibReusable {
         tableView.register(headerFooterViewType: MovieHeader.self)
     }
     
-    private func getMovies() {
+    func getMovies() {
         dispatchGroup.enter()
         getPopularMovies()
         dispatchGroup.enter()
@@ -49,7 +49,7 @@ final class HomeViewController: UIViewController, NibReusable {
         }
     }
     
-    private func getPopularMovies() {
+    func getPopularMovies() {
         let popularURL = Urls.shared.getPopularUrl()
         movieRepository.getMovies(urlString: popularURL) { [weak self] result in
             guard let self else { return }
@@ -59,20 +59,13 @@ final class HomeViewController: UIViewController, NibReusable {
                     self.popularMovies = movieResponse.results ?? []
                 }
             case .failure(let error):
-                switch error {
-                case let AppError.normalError(message):
-                    self.showError(message: message)
-                case AppError.noInternet:
-                    self.showError(title: AppError.noInternet.description)
-                default:
-                    self.showError(message: error.localizedDescription)
-                }
+                showError(error: error)
             }
             self.dispatchGroup.leave()
         }
     }
     
-    private func getTopratedMovies() {
+    func getTopratedMovies() {
         let topRatedURL = Urls.shared.getTopRatedUrl()
         movieRepository.getMovies(urlString: topRatedURL) { [weak self] result in
             guard let self else { return }
@@ -83,20 +76,13 @@ final class HomeViewController: UIViewController, NibReusable {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                switch error {
-                case let AppError.normalError(message):
-                    self.showError(message: message)
-                case AppError.noInternet:
-                    self.showError(title: AppError.noInternet.description)
-                default:
-                    self.showError(message: error.localizedDescription)
-                }
+                showError(error: error)
             }
             self.dispatchGroup.leave()
         }
     }
     
-    private func getUpcomingMovies() {
+    func getUpcomingMovies() {
         let upComingURL = Urls.shared.getUpComingUrl()
         movieRepository.getMovies(urlString: upComingURL) { [weak self] result in
             guard let self else { return }
@@ -107,20 +93,13 @@ final class HomeViewController: UIViewController, NibReusable {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                switch error {
-                case let AppError.normalError(message):
-                    self.showError(message: message)
-                case AppError.noInternet:
-                    self.showError(title: AppError.noInternet.description)
-                default:
-                    self.showError(message: error.localizedDescription)
-                }
+                showError(error: error)
             }
             self.dispatchGroup.leave()
         }
     }
     
-    private func getNowplayingMovies() {
+    func getNowplayingMovies() {
         let nowPlayingURL = Urls.shared.getNowPlayingUrl()
         movieRepository.getMovies(urlString: nowPlayingURL) { [weak self] result in
             guard let self else { return }
@@ -131,14 +110,7 @@ final class HomeViewController: UIViewController, NibReusable {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                switch error {
-                case let AppError.normalError(message):
-                    self.showError(message: message)
-                case AppError.noInternet:
-                    self.showError(title: AppError.noInternet.description)
-                default:
-                    self.showError(message: error.localizedDescription)
-                }
+                showError(error: error)
             }
             self.dispatchGroup.leave()
         }
@@ -204,10 +176,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             movieHeader?.configView(title: sectionType.title)
             movieHeader?.showMoreTapped = { [weak self] in
                 guard let self = self else { return }
-                let vc = ListMovieViewController()
-                vc.category = sectionType.urlString
-                vc.titleString = sectionType.title
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.toListMovies(type: sectionType)
             }
             return movieHeader
         }
@@ -228,5 +197,12 @@ extension HomeViewController {
     func toSearchMovieScreen() {
         let vc = SearchViewController()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func toListMovies(type: HomeSectionType) {
+        let vc = ListMovieViewController()
+        vc.category = type.urlString
+        vc.titleString = type.title
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

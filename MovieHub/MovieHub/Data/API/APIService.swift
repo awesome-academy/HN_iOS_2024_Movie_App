@@ -22,7 +22,12 @@ enum AppError: Error {
     }
 }
 
-class APIService {
+protocol APIServiceProtocol {
+    func get<T: Decodable>(urlString: String, completion: @escaping(Result<T, Error>) -> Void)
+    func loadImageFromUrl(urlString: String, completion: @escaping (UIImage?, Error?) -> Void)
+}
+
+class APIService: APIServiceProtocol {
     static let shared = APIService()
     let cache = NSCache<NSString, UIImage>()
     private init() {}
